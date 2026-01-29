@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   output: 'standalone', // Enable for Docker deployment
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  experimental: {
+    typedRoutes: false,
+  },
   images: {
     remotePatterns: [
       {
