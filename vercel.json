@@ -1,7 +1,11 @@
-# Vercel Build Configuration
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "installCommand": "npm ci",
-  "devCommand": "npm run dev"
+  "installCommand": "npm ci && npx prisma generate",
+  "devCommand": "npm run dev",
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 10
+    }
+  }
 }
